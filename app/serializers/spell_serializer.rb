@@ -1,4 +1,4 @@
 class SpellSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :level, :description, :class_list
 end

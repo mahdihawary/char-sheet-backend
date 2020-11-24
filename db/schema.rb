@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_180251) do
+ActiveRecord::Schema.define(version: 2020_11_23_154122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,13 +58,34 @@ ActiveRecord::Schema.define(version: 2020_11_18_180251) do
     t.integer "speed"
     t.integer "proficiency"
     t.string "name"
-    t.string "class"
+    t.string "class_type"
     t.string "race"
     t.string "armor"
     t.integer "initiative"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+  end
+
+  create_table "class_types", force: :cascade do |t|
+    t.string "desc"
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "spellcaster"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "image"
+    t.string "ability"
+    t.integer "ability_score"
+    t.integer "darkvision"
+    t.integer "speed"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -82,6 +103,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_180251) do
     t.string "class_list"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "class_type_id"
   end
 
   create_table "users", force: :cascade do |t|

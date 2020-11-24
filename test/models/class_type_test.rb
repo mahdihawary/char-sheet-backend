@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CharacterSkillTest < ActiveSupport::TestCase
+class ClassTypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
