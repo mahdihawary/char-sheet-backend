@@ -13,6 +13,14 @@ class Api::V1::CharactersController < ApplicationController
         render json: json_string
     end
 
+    def update
+        character = Character.find(params[:id])
+        character.update(character_params)
+        json_string = CharacterSerializer.new(character).serializable_hash
+        render json: json_string
+    end
+
+
     def create
         character= Character.create(character_params)
         json_string = CharacterSerializer.new(character).serializable_hash

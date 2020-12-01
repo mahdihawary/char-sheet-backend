@@ -1,4 +1,4 @@
 class SkillSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :ability, :desc
 end

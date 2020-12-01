@@ -6,4 +6,10 @@ class CharacterSerializer
   attribute :spells do |object| 
     object.spells.as_json
   end
+
+   attribute :skills do |object| 
+    object.skills.as_json
+  end
+
+
 end
