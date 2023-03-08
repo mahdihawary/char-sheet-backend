@@ -8,9 +8,9 @@
 
 # Skill.destroy_all
 # Spell.destroy_all
- Race.destroy_all
-ClassType.destroy_all
-Character.destroy_all
+#  Race.destroy_all
+# ClassType.destroy_all
+# Character.destroy_all
 
 def spells 
     response = RestClient.get 'https://api.open5e.com/spells/'
