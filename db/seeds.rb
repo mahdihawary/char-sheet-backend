@@ -28,15 +28,17 @@ end
 def skills 
     response =RestClient.get "https://www.dnd5eapi.co/api/skills/"
     json = JSON.parse response
+
     json["results"].each do |skill|
         index=skill["index"]
+
         response2 =RestClient.get "https://www.dnd5eapi.co/api/skills/#{index}"
         json2 =JSON.parse response2
         Skill.create(name:json2["name"], desc:json2["desc"][0], ability:json2["ability_score"]["name"])
     end
 end
-# spells
-# skills
+ spells
+skills
  Race.create(name:"High Elf", desc:"As a high elf, you have a keen mind and a mastery of at least the basics of magic.", ability:"int", ability_score:2, image:"", darkvision:30, speed:30)
  Race.create(name:"Mountain Dwarf", desc:"As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. ", ability:"con", ability_score:2, image:"", darkvision:30, speed:25)
  Race.create(name:"Hobbit", desc:"The diminutive hobbits survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense. Standing about 3 feet tall, they appear relatively harmless and so have managed to survive for centuries in the shadow of empires and on the edges of wars and political strife.", ability:"dex", ability_score:2, image:"", darkvision:0, speed:25)
