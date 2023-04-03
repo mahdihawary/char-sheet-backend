@@ -70,5 +70,5 @@ Character.create(health:40,strength:10,wisdom:12,dexterity:18,
     Character.create(health:1,strength:14,wisdom:20,dexterity:15,
     intelligence:20,charisma:20,constitution:12,level:20,image:"https://cms.qz.com/wp-content/uploads/2018/08/gandalf-lord-of-the-rings-e1534255368438.jpg?quality=75&strip=all&w=900&h=900&crop=1",
     darkvision:30,speed:30,proficiency:2,name:"Gandalf",class_type:"Wizard",race:"Human",armor:10,initiative:2,user_id:1)
-# User.create(name:"Nimr")
+ User.create(name:"Nimr")
 
